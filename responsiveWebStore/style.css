@@ -1,0 +1,178 @@
+/* #region CSS RESET */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+/* #endregion CSS RESET */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+main {
+  flex: 1;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+@media (width<1200px) {
+  .container {
+    padding-inline: clamp(1rem, 4vw, 3rem);
+  }
+}
+header {
+  min-width: 100dvw;
+  background-color: rgb(66, 74, 71);
+  font-size: 1.2rem;
+
+  & .navbar {
+    min-height: 60px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    place-items: center;
+  }
+  & .nav-links {
+    justify-self: center;
+    & ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0;
+
+      & li {
+        list-style: none;
+
+        & a {
+          text-decoration: none;
+          color: #ff914d;
+        }
+      }
+    }
+  }
+}
+.nav-actions {
+  justify-self: end;
+
+  & .actions-child {
+    display: flex;
+    gap: 1rem;
+    & a {
+      text-decoration: none;
+    }
+    & .account-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+}
+.login-btn,
+.register-btn {
+  color: rgb(66, 74, 71);
+  padding: 0.25rem 1rem;
+  border-radius: 15%;
+  background-color: rgb(3, 214, 196);
+}
+.logo {
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  text-wrap: nowrap;
+  text-align: center;
+  text-decoration: none;
+  gap: 1rem;
+  color: #ff914d;
+}
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.social-links a {
+  color: #ff914d;
+  font-size: 1.5rem;
+}
+
+.social-links a:hover {
+  color: #ff914d85;
+}
